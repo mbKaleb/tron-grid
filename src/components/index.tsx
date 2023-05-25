@@ -21,7 +21,7 @@ const TronGrid = () => {
 	}
 
 
-	useEffect(() => {
+	useEffect(() => {// eslint-disable-next-line
 		pathEls = document.querySelector("#" + svg.props.name)?.childNodes[0]?.childNodes[0]?.childNodes
 	}, [svg])
 
@@ -61,7 +61,7 @@ const TronGrid = () => {
 				});
 			}
 		}
-		}
+		}// eslint-disable-next-line
 	},[])
 
 	return (

@@ -1,8 +1,6 @@
-import React from 'react';
-import logo from './logo.svg';
+
 import './App.css';
 import { TronGrid } from './components';
-import { svgGrid } from './svgs';
 
 
 function App() {
