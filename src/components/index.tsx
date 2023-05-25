@@ -7,7 +7,6 @@ const TronGrid = () => {
 	const svg = svgGrid;
 	let pathEls:any
 
-
 	const OPTIONS = {
 		"stroke-color" : "#7DFDFE",
 		"stroke-width": "6",
@@ -16,7 +15,7 @@ const TronGrid = () => {
 		
 		"autoplay": true,
 
-		"short-duration": 5000,
+		"short-duration": 4000,
 		"long-duration": 9000,
 
 	}
@@ -36,18 +35,36 @@ const TronGrid = () => {
 			pathEl.setAttribute("stroke", OPTIONS["stroke-color"])
 			pathEl.setAttribute('stroke-dashoffset', offset);
 
+			const rNum = Math.random()
+
 			anime({
 				targets: pathEl,
-				strokeDashoffset: [offset, 0],
+				strokeDashoffset: [offset, 2],
+
+				strokeWidth: 6,
+
 				duration: anime.random(OPTIONS["short-duration"], OPTIONS["long-duration"]),
 				easing: OPTIONS["easing"],
 				autoplay: OPTIONS["autoplay"]
 			});
+
+			if (rNum > 0.5) {
+				anime({
+					targets: pathEl,
+					strokeWidth: 10,
+
+					duration: anime.random(400, 800),
+					delay: 9000,
+					easing: "linear",
+					loop: true,
+					autoplay: true,
+				});
+			}
 		}
 		}
 	},[])
 
-	return ( 
+	return (
 		<div>
 			{svgGrid}
 		</div>
