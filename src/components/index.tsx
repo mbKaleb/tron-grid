@@ -41,21 +41,21 @@ const TronGrid = () => {
 				targets: pathEl,
 				strokeDashoffset: [offset, 2],
 
-				strokeWidth: 6,
+				strokeWidth: 1,
 
 				duration: anime.random(OPTIONS["short-duration"], OPTIONS["long-duration"]),
 				easing: OPTIONS["easing"],
 				autoplay: OPTIONS["autoplay"]
 			});
 
-			if (rNum > 0.5) {
+			if (rNum > 0.7) {
 				anime({
 					targets: pathEl,
-					strokeWidth: 10,
+					strokeWidth: [1, 3],
 
-					duration: anime.random(400, 800),
-					delay: 9000,
-					easing: "linear",
+					duration: 5000,
+					delay: anime.random(4000, 20000),
+					easing: "easeOutBack",
 					loop: true,
 					autoplay: true,
 				});
